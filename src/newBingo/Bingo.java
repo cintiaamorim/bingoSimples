@@ -51,7 +51,7 @@ public class Bingo {
 		if(lstBingo.isEmpty()) {
 			System.out.println("Nenhum número foi sorteado");
 		} else if(!lstBingo.isEmpty()) {
-		System.out.println("Foram sorteados " + lstBingo.size() + " números");
+		System.out.println("Foram sorteados " + lstBingo.size() + " número(s)");
 		Collections.sort(lstBingo);
 		System.out.println("Os números sorteados são: " + lstBingo.toString());
 		}
