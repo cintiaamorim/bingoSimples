@@ -9,13 +9,10 @@ public class Bingo {
 	
 	Integer numeroSorteado;	
 	
-	String letra;
-	
 	List<Integer> lstBingo = new ArrayList<Integer>();
 	
-	public void verificarLetraDigitada(String letra) {
+	public void verificarLetraDigitada() {
 		System.out.println("Digite a letra (R para sortear, X para sair)");
-		this.letra = letra;	
 	}
 	
 	public void sortearNumero() {

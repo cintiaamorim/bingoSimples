@@ -18,7 +18,7 @@ public class Sorteio {
 		
 		while(letra.equalsIgnoreCase("R")) {
 			bingo.sortearNumero(); 
-			bingo.verificarLetraDigitada(letra);
+			bingo.verificarLetraDigitada();
 			letra = entrada.next();
 			if(letra.equalsIgnoreCase("X")) {				
 				break;
