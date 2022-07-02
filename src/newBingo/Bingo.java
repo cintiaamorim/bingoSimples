@@ -11,14 +11,6 @@ public class Bingo {
 	Integer numeroSorteado;
 	
 	List<Integer> lstbingo = new ArrayList<Integer>();
-
-	public int getNumeroSorteado() {
-		return numeroSorteado;
-	}
-
-	public void setNumeroSorteado(int numeroSorteado) {
-		this.numeroSorteado = numeroSorteado;
-	}	
 	
 	public void sortearNumero() {
 		Random aleatorio  = new Random();
