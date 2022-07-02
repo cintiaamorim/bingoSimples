@@ -2,8 +2,6 @@ package newBingo;
 
 import java.util.Scanner;
 
-import javax.swing.JOptionPane;
-
 public class Sorteio {
 
 	public static void main(String[] args) {
