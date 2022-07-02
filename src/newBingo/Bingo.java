@@ -7,33 +7,41 @@ import java.util.Random;
 
 public class Bingo {
 	
-	Integer numeroSorteado;	
+	Integer numeroSorteado;		
+	
+	boolean maxLista = false;
 	
 	List<Integer> lstBingo = new ArrayList<Integer>();
 	
-	public void verificarLetraDigitada() {
-		System.out.println("Digite a letra (R para sortear, X para sair)");
-	}
-	
-	public void sortearNumero() {
-		Random aleatorio  = new Random();
-		numeroSorteado = aleatorio.nextInt(5) + 1;
-		if(lstBingo.isEmpty()) {
-			adicionarNumeroLista(numeroSorteado);
-		} else 
-		verificarNumeroRepetido(numeroSorteado);
+	public void sortearNumero() 
+	{
+			if(lstBingo.size() == 5) 
+			{
+				System.out.println("Não existem mais números possíveis para sortear");
+				maxLista = true;
+			} else 
+			{
+				Random aleatorio = new Random();
+				numeroSorteado = aleatorio.nextInt(5) + 1;
+				if(lstBingo.isEmpty()) 
+				{
+					adicionarNumeroLista(numeroSorteado);
+				} else 
+					{
+						verificarNumeroRepetido(numeroSorteado);
+					}
+	 		} 
 	}
 	
 	public void verificarNumeroRepetido(int numeroSorteado) {
 		if(!lstBingo.isEmpty()) {
-		for(int i=0; i < lstBingo.size(); i++) {
+		for(int i=0; i < lstBingo.size();) {
 			if(lstBingo.contains(numeroSorteado)) {
 				sortearNumero();
 				break;
-			} else {
+				} else 
 				adicionarNumeroLista(numeroSorteado);
-				break;
-			}
+				break;			
 		}
 		}
 		}
@@ -43,7 +51,6 @@ public class Bingo {
 		System.out.println("Sorteado: " + numeroSorteado);
 	}
 
-	
 	public void exibirTodosNumerosSorteados() {
 		System.out.println("Fim do Sorteio");
 		if(lstBingo.isEmpty()) {

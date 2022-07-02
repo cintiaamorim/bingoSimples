@@ -1,6 +1,5 @@
 package newBingo;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Sorteio {
@@ -13,17 +12,17 @@ public class Sorteio {
 
 		Bingo bingo = new Bingo();	
 		
-		System.out.println("Digite a letra (R para sortear, X para sair)");
-		letra = entrada.next();		
-		
-		while(letra.equalsIgnoreCase("R")) {
-			bingo.sortearNumero(); 
-			bingo.verificarLetraDigitada();
+		do{
+			System.out.println("Digite a letra (R para sortear, X para sair)");
 			letra = entrada.next();
 			if(letra.equalsIgnoreCase("X")) {				
 				break;
 			}
-		}		
+			bingo.sortearNumero(); 
+			if(bingo.maxLista == true) {
+				break;			
+			}
+		}while(letra.equalsIgnoreCase("R"));		
   
         bingo.exibirTodosNumerosSorteados();
 
