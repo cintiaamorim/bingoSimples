@@ -10,21 +10,21 @@ public class Bingo {
 	
 	Integer numeroSorteado;
 	
-	List<Integer> lstbingo = new ArrayList<Integer>();
+	List<Integer> lstBingo = new ArrayList<Integer>();
 	
 	public void sortearNumero() {
 		Random aleatorio  = new Random();
 		numeroSorteado = aleatorio .nextInt(99) + 1;
-		if(lstbingo.isEmpty()) {
+		if(lstBingo.isEmpty()) {
 			adicionarNumeroLista(numeroSorteado);
 		} else 
 		verificarNumeroRepetido(numeroSorteado);
 	}
 	
 	public void verificarNumeroRepetido(Integer numeroSorteado) {
-		if(!lstbingo.isEmpty()) {
-		for(int i=0; i < lstbingo.size(); i++) {
-			if(lstbingo.equals(numeroSorteado)) {
+		if(!lstBingo.isEmpty()) {
+		for(int i=0; i < lstBingo.size(); i++) {
+			if(lstBingo.equals(numeroSorteado)) {
 				sortearNumero();
 			} else {
 				adicionarNumeroLista(numeroSorteado);
@@ -35,17 +35,17 @@ public class Bingo {
 		}
 	
 	public void adicionarNumeroLista(int numeroSorteado) {
-		lstbingo.add(numeroSorteado);
+		lstBingo.add(numeroSorteado);
 		System.out.println("Sorteado: " + numeroSorteado);
 	}
 
 	
 	public void exibirTodosNumerosSorteados() {
-		if(lstbingo.isEmpty()) {
+		if(lstBingo.isEmpty()) {
 			System.out.println("Nenhum número foi sorteado");
-		} else if(!lstbingo.isEmpty()) {
-		System.out.println("Foram sorteados " + lstbingo.size() + " números");
-		System.out.println("Os números sorteados são: " + lstbingo.toString());
+		} else if(!lstBingo.isEmpty()) {
+		System.out.println("Foram sorteados " + lstBingo.size() + " números");
+		System.out.println("Os números sorteados são: " + lstBingo.toString());
 		}
 		}
 	}
