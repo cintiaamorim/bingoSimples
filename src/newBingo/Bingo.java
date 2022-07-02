@@ -15,14 +15,14 @@ public class Bingo {
 	
 	public void sortearNumero() 
 	{
-			if(lstBingo.size() == 5) 
+			if(lstBingo.size() == 99) 
 			{
 				System.out.println("Não existem mais números possíveis para sortear");
 				maxLista = true;
 			} else 
 			{
 				Random aleatorio = new Random();
-				numeroSorteado = aleatorio.nextInt(5) + 1;
+				numeroSorteado = aleatorio.nextInt(99) + 1;
 				if(lstBingo.isEmpty()) 
 				{
 					adicionarNumeroLista(numeroSorteado);
