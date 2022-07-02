@@ -20,7 +20,7 @@ public class Bingo {
 	
 	public void sortearNumero() {
 		Random aleatorio  = new Random();
-		numeroSorteado = aleatorio.nextInt(99) + 1;
+		numeroSorteado = aleatorio.nextInt(5) + 1;
 		if(lstBingo.isEmpty()) {
 			adicionarNumeroLista(numeroSorteado);
 		} else 
@@ -32,6 +32,7 @@ public class Bingo {
 		for(int i=0; i < lstBingo.size(); i++) {
 			if(lstBingo.contains(numeroSorteado)) {
 				sortearNumero();
+				break;
 			} else {
 				adicionarNumeroLista(numeroSorteado);
 				break;
